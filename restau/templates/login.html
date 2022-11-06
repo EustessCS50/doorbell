@@ -42,7 +42,7 @@
                 </div>
                 <div class="img">
                     <img src="{% static 'restau/images/signup2.png' %}" alt="signup1">
-                    <h2>Signin</h3>
+                    <h2>Signin</h2>
                 </div>
                 <form action="" method="POST">
                 	{% csrf_token %} 
@@ -59,7 +59,7 @@
                     <input type="checkbox" >Remember me
                     <br>
                     <br>
-                    <i><a href="#">Password Forgotten</a></i>
+                    <i><a href="{% url 'reset_password' %}">Password Forgotten</a></i>
                     <br>
                     <br>
                     <div>
