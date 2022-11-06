@@ -1,0 +1,564 @@
+*{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    font-family: 'lato',sans-serif,'gentium plus',serif,'playfair display',serif,'lora',serif;
+    text-decoration: none;
+
+ 
+}
+:root{
+    --bg-color:#800000;
+    --txt-color:#d2b48c;
+}
+.topnav{
+    position: fixed;
+    top: 0;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    width: 100%;
+    height: 25%;
+    color: orange;
+    transition:  all 500ms ease-in-out;
+    background: var(--bg-color);
+    color: var(--txt-color);
+    z-index: 1;
+    
+}
+.topnav-right{
+    width: 65%;
+    display: flex;
+    flex-direction: row-reverse;
+}
+.topnav-right .toggle-btn {
+    z-index: 1;
+    position: absolute;
+    top: 55%;
+    right: 14px;
+    background: var(--bg-color);
+    width: 30px;
+    height: 30px;
+    transition:  all 200ms ease-in-out;
+    cursor: pointer;
+}
+.topnav-right .toggle-btn span{
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background: var(--txt-color);
+    transition: all 200ms ease-in-out;
+}
+.topnav-right .toggle-btn span:nth-child(1){
+    top: 30%;
+    transform: translateY(8px) rotate(45deg)
+
+}
+.topnav-right .toggle-btn span:nth-child(2){
+    display:none; 
+
+}
+.topnav-right .toggle-btn span:nth-child(3){
+    top: 70%;
+    transform: translateY(-5px) rotate(-42deg);
+
+}
+.topnav-right .navs{
+    transform: translateX(12%);
+    display: inline-block;
+    width: 100%;
+    margin-left:100px ;
+    margin-top: -40%;
+    background: var(--bg-color);
+    color: var(--txt-color);
+    border-radius: 15px;
+    transition:  all 800ms ease-in-out;  
+    height:100%;
+    padding: 100%;
+        
+}
+.topnav-right .navs a{
+    font-size: larger;
+    color: var(--txt-color);
+    border-bottom:2px solid var(--txt-color);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin:15px 100px;
+    cursor: pointer;
+    transition:  all 300ms ease-in-out;
+    text-align: center;
+    padding:20px 15px;
+}
+.topnav-right .user h2{
+    margin-right:15px ;
+    font-size: larger;
+    margin-top: 15px;
+}
+.topnav-right .user img{
+    z-index: 1;
+    width: 15%;
+    border-radius: 50px;
+    position: absolute;
+    right: 35%;
+    top: 60%
+}
+.topnav-right.close {
+    width: 100%;
+}
+.topnav-right.close .user h2{
+    margin-right:15px ;
+    font-size: larger;
+    margin-top: 15px;
+}
+.topnav-right.close .user img{
+    display: none;
+    width: 15%;
+    border-radius: 50px;
+    position: absolute;
+    right: 35%;
+    top: 60%
+}
+.topnav-right.close .navs{
+    display: none;
+    position: relative;
+    width: 80%;
+    height: 250px;
+    top:30px;
+    transition:  all 800ms ease-in-out;
+   
+}
+.topnav-right.close .navs a{
+    color: var(--txt-color);
+    border-bottom:2px solid var(--txt-color);
+    width: 45%;
+    text-align: center;
+    padding: 8px 0;
+}
+.topnav-right .navs a:active,
+.topnav-right .navs a:hover{
+    letter-spacing: .1rem;
+    background: var(--txt-color);
+    color: var(--bg-color);
+    border-radius: 10px;
+}
+
+.topnav-right.close span:nth-child(1){
+    top: 10%;
+    transform: translateY(0) rotate(0deg);
+
+
+   
+}
+.topnav-right.close span:nth-child(2){
+    
+    top: 45%;
+    display: inline;
+    transform: translateY(0) rotate(0deg);
+
+}
+.topnav-right.close span:nth-child(3){
+    top: 80%;
+    transform: translateY(0) rotate(0deg);
+        
+}
+.topnav .restau img{
+    width: 15%;
+    border-radius: 30px;
+}
+.restau{
+    z-index: 1;
+    font-weight: bolder;
+    font-size: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    padding-top:10px ;
+    padding-left: 10px;
+}
+.back{
+    background: #d8bca4;
+    background-blend-mode: multiply;
+    background-image: url("back1.jpg");
+    background-size: cover;
+    background-attachment:scroll;
+    background-repeat: no-repeat;
+    padding-top: 100px;
+    padding-bottom: 5px;
+}
+.boxes{
+    padding: 30px;
+    display: inline-block;
+    flex-wrap: wrap;
+    width: 60%;
+
+    
+}
+.boxes > *{
+    flex: 1 1 100%;
+    margin-top: 50%;
+    margin-left: 10%;
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    transition:  all 500ms ease-in-out;
+}
+.boxes > *:hover{
+    transform: scale(1.1);
+}
+.fast-food{
+    position: relative;
+
+    
+}
+.fast-food .name{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 50%;
+    font-size: 20px;
+    font-weight: bold;
+    box-shadow: 50px 15px 100px;  
+    border-bottom: 1px solid white;
+    background-blend-mode: multiply;
+
+}
+.fast-food .fastfd-img img {
+    width: 100%;
+    border-radius: 10px;
+}
+.fast-food .name a{
+    text-decoration: none;
+    cursor: pointer;
+    color: var(--bg-color);
+
+}
+.fast-food .name a:hover{
+    letter-spacing: .1rem;
+    color: var(--txt-color);
+}
+.boxes .breakfast{
+    position: relative;
+
+}
+.breakfast .brkfst-img img{
+    width: 100%;
+    border-radius: 10px;
+}
+.breakfast .name{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 5px;
+    width: 100%;
+    height: 50%;
+    font-size: 20px;
+    font-weight: bold;
+    box-shadow: 50px 15px 100px;  
+    border-bottom: 1px solid white;
+    background-blend-mode: lighten;
+}
+.breakfast .name a{
+    text-decoration: none;
+    cursor: pointer;
+    color: var(--bg-color);
+
+}
+.breakfast .name a:hover{
+    letter-spacing: .1rem;
+    color: var(--txt-color);
+}
+.delicious{
+    display: none;
+}
+.welcome{
+    background: var(--bg-color);
+    color: var(--txt-color);
+    padding: 20px;
+    font-size: 22px;
+    transition:  all 800ms ease-in-out;
+    line-height: 1.9rem;
+}
+.welcome:hover{
+    transform: scale(1.04);
+}
+.welcome > *{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 0;
+}
+.welcome .message  span{
+    font-size: 30px;
+    font-weight: bolder;
+    color:  var(--txt-color);
+}
+.welcome .learnmore button{
+    padding: 10px;
+    border-radius: 70px;
+    font-size: 20px;
+    background:var(--txt-color);
+    color:  orangered;
+    font-weight: bold;
+}
+.welcome .learnmore button:hover{
+    letter-spacing: .1rem;
+
+}
+.thirdslide{
+    position: relative;
+    width: 80%;
+    padding: 30px 10px;
+
+}
+.thirdslide .intropics .chicken1{
+    position: relative;
+    width: 50%;
+    border-radius: 10px;
+}
+.corn{
+    position:absolute;
+    top: 150px;
+    left: 25%;
+    border-radius: 10px;
+    width: 80%;
+    transition:  all 800ms ease-in-out;
+    
+}
+.corn:hover{
+    position:absolute;
+    top: 50px;
+    left: 15%;
+}
+.tasty-parag-loc{
+    color: var(--bg-color);
+    padding: 15px;
+    transition:  all 800ms ease-in-out;
+
+}
+.tasty-parag-loc:hover{
+    line-height: 2rem;
+    transform: scale(1.04);
+    box-shadow: 8px 5px 15px;
+    border: 2px solid white;
+}
+.tasty-parag-loc > *{
+    display: inline-block;
+    padding: 5px;
+}
+.tasty-parag-loc .tasty{
+    font-size: 32px;
+    font-weight: bolder;
+    
+}
+.tasty-parag-loc .parag{
+    font-size: 22px;
+    line-height: 1.8rem;
+}
+.tasty-parag-loc .location{
+    padding-left: 40px;
+    padding-bottom: 40px;
+}
+.dishes{
+    background: orangered;
+    color: whitesmoke;
+    padding: 25px;
+    line-height: 2rem;
+}
+.dishes > *{
+    
+    display: flex;
+    flex-direction: column;
+    font-size: 22px;
+}
+.dishes h3{
+    font-weight: bold;
+    font-size: 30px;
+    padding-bottom: 20px;
+}
+.dishes span{
+    border-bottom: 1px solid whitesmoke;
+    padding-top: 10px;
+}
+.dishes button{
+    margin: 20px 0;
+    padding: 10px 25px;
+    border-radius: 30px;
+    background: orangered;
+    color: whitesmoke;
+    border: 1px solid whitesmoke;
+    transition:  all 800ms ease-in-out;
+}
+.dishes button:hover{
+    letter-spacing: .1rem;
+    transform:scale(1.04);
+}
+/*MEDIA QUERRIES*/
+@media screen and (min-width:720px) {
+    #home{
+        width: 100%;
+        height: 100%;
+
+    }
+    .topnav{
+        position: fixed;
+        top: 0;
+        left: -0;
+        width:35%;
+        height: 100%;
+        transition:  all 200ms ease-in-out;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+    .topnav-right .navs{
+       height: 50%;
+       padding: 70%;
+    }
+    .topnav .restau{
+        display: flex;
+        flex-direction: column;
+        margin-top: 90px;
+        align-items: center;
+    }
+    .topnav .restau .logo{
+        position: absolute;
+        bottom: 40px;
+        font-size: larger;
+    }
+    .topnav-right .toggle-btn{
+        position: absolute;
+        top: 6px;
+        left: 105%;
+    }
+    .topnav.lock{
+        left: -290px;
+        transition:  all 200ms ease-in-out;
+    }
+    .topnav-right.close .navs a:hover,
+    .topnav-right.close .navs a:active{
+        letter-spacing: .1rem;
+        background: var(--txt-color);
+        color: var(--bg-color);
+        border-radius: 10px;
+    }
+    .back{
+        background: #d8bca4;
+        background-blend-mode: multiply;
+        background-image: url("back1.jpg");
+        background-size: cover;
+        background-attachment:scroll;
+        background-repeat: no-repeat;
+        padding-top: 2px;
+        padding-bottom: 20px;
+    }
+    .boxes{
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 20%;
+    }
+    .boxes > *{
+        flex: 1 1 40%;
+        margin-top: 0%;
+    }
+    .fast-food {
+        position: relative;
+        margin-top: 10px;
+        width: 100%;
+    }
+    .fast-food .fastfd-img img {
+        width: 80%;
+        border-radius: 10px;
+    }
+    .breakfast .brkfst-img img{
+        width: 80%;
+        border-radius: 10px;
+    }
+    .fast-food .name{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        width: 80%;
+        height: 50%;
+        font-size: 20px;
+        font-weight: bold;
+        box-shadow: 50px 15px 100px;  
+        border-bottom: 1px solid white;
+        background-blend-mode: multiply;
+    
+    }
+    .breakfast .name{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        border-radius: 5px;
+        width: 80%;
+        height: 50%;
+        font-size: 20px;
+        font-weight: bold;
+        box-shadow: 50px 15px 100px;  
+        border-bottom: 1px solid white;
+        background-blend-mode: lighten;
+    }
+    .delicious{
+        display: flex;
+        width: 40%;
+        position: relative;
+        top: 120px;
+        padding-top: 10%;
+        padding-bottom: 20%;
+    }
+    .delicious .dlcs-img{
+        width: 40%;
+        
+    }
+    .delicious .dlcs-img img{
+        width: 100%;
+        border-radius: 10px;
+    }
+    .delicious .name{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        border-radius: 5px;
+        width: 40%;
+        height: 30%;
+        font-size: 30px;
+        font-weight: bold;
+        box-shadow: 50px 15px 100px;  
+        border-bottom: 1px solid rgb(0, 0, 0);
+        background-blend-mode: multiply;
+        color: white;
+    }
+    .delicious .name a{
+        cursor: pointer;
+        color: var(--bg-color);
+    }
+    .welcome .message{
+        flex-direction: column;
+        line-height: 2.1rem;
+        margin:5px 20%;
+    }
+    .dishes .dishes-cost{
+        display: flex;
+        flex-direction: column;
+        line-height: 2rem;
+    }
+    .dishes .dishes-cost span{
+        display: flex;
+        justify-content: space-between;
+    }
+   
+}

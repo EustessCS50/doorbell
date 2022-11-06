@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{% load static %} 
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'restau/css/signin.css' %} ">
+    <title>Food delivery signin page</title>
+</head>
+<body>
+    <Section id="signupfirst">
+            <div class="topnav">
+                <div class="topnav-right close">
+                    <div class="toggle-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="user">
+                        <h2>Hi, User</h2>
+                        <img src="profile.jpg" alt="profile">
+                    </div>
+                    <nav class="navs ">
+                        <a href="Home page.html">HOME</a>
+                        <a href="#menu">MENU</a>
+                        <a href="signin page.html">SIGN IN</a>
+                        <a href="#contact">CONTACT</a>
+                    </nav>
+                </div>
+                <div class="restau">
+                    <span class="name">237 KITCHEN &nbsp;<img src="237kitc.jpg"></span>
+                    <span class="logo">&copy; &nbsp;B WORKS</span>
+                </div>
+            </div>
+            <div class="sec-logo">
+                <h1>&copy; &nbsp;B WORKS</h1>
+            </div>
+            <div class="signup">
+                <div class="signin">
+                    <p>Don't Have An Account?.</p><br>
+                    <a href="signup page.html">Signup</a>
+                </div>
+                <div class="img">
+                    <img src="signup2.png" alt="signup1">
+                    <h2>Signin</h3>
+                </div>
+                <form action="#" method="get">
+                    <label for="">USERNAME</label>
+                    <Br>
+                    <input maxlength="10" type="text" placeholder="letters only" required>
+                    <br>
+                    <br>
+                    <label for="">PASSWORD</label>
+                    <br>
+                    <input type="password" placeholder="Enter Your Password"  required>
+                    <Br>
+                    <br>
+                    <input type="checkbox" >Remember me
+                    <br>
+                    <br>
+                    <i><a href="#">Password Forgotten</a></i>
+                    <br>
+                    <br>
+                    <div>
+                        <input class="submit" type="submit" value="Signin">
+                    </div>
+                </form>   
+            </div>
+    </Section>
+    <script src="bes.js"></script>
+</body>
+</html>

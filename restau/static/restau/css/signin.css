@@ -1,0 +1,326 @@
+*{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    font-family: 'lato',sans-serif,'gentium plus',serif,'playfair display',serif,'lora',serif;
+    text-decoration: none;
+ 
+}
+:root{
+    --bg-color:#800000;
+    --txt-color:#d2b48c;
+}
+.topnav{
+    position: fixed;
+    top: 0;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    width: 100%;
+    height: 25%;
+    color: orange;
+    transition:  all 500ms ease-in-out;
+    background: var(--bg-color);
+    color: var(--txt-color);
+    z-index: 1;
+    
+}
+.topnav-right{
+    width: 55%;
+    display: flex;
+    flex-direction: row-reverse;
+}
+.topnav-right .toggle-btn {
+    position: absolute;
+    top: 6px;
+    right: 4px;
+    background: var(--bg-color);
+    width: 30px;
+    height: 30px;
+    transition:  all 200ms ease-in-out;
+    cursor: pointer;
+}
+.topnav-right .toggle-btn span{
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background: var(--txt-color);
+    transition: all 200ms ease-in-out;
+}
+.topnav-right .toggle-btn span:nth-child(1){
+    top: 30%;
+    transform: translateY(8px) rotate(45deg)
+}
+.topnav-right .toggle-btn span:nth-child(2){
+    display: none;
+}
+.topnav-right .toggle-btn span:nth-child(3){
+    top: 70%;
+    transform: translateY(-5px) rotate(-42deg);
+}
+.topnav-right .navs{
+    display: inline-block;
+    width: 100%;
+    margin-left:150px ;
+    margin-top: -50%;
+    background: var(--bg-color);
+    color: var(--txt-color);
+    border-radius: 15px;
+    transition:  all 800ms ease-in-out;
+    height: 100%;
+    padding: 100%;
+
+
+   
+}
+.topnav-right .navs a{
+    font-size: larger;
+    color: var(--txt-color);
+    border-bottom:2px solid var(--txt-color);
+    width: 100%;
+    height: 10%;
+    text-align: center;
+    padding: 20px 15px;
+    margin-left: 60%;
+    display: flex;
+    flex-direction: column; 
+    margin: 15px 100px;
+    cursor: pointer;
+    transition:  all 300ms ease-in-out;
+}
+.topnav-right .user h2{
+    margin-right:15px ;
+    font-size: larger;
+    margin-top: 15px;
+}
+.topnav-right .user img{
+    z-index: 1; 
+    width: 15%;
+    border-radius: 50px;
+    position: absolute;
+    right: 35%;
+    top: 60%
+}
+.topnav-right.close {
+    width: 100%;
+}
+.topnav-right.close .user h2{
+    margin-right:15px ;
+    font-size: larger;
+    margin-top: 15px;
+}
+.topnav-right.close .user img{
+    display: none;
+    width: 15%;
+    border-radius: 50px;
+    position: absolute;
+    right: 35%;
+    top: 60%
+}
+
+
+.topnav-right.close .navs{
+    display: none;
+    position: relative;
+    width: 80%;
+    height: 250px;
+    top:30px;
+    transition:  all 800ms ease-in-out;
+
+}
+
+.topnav-right .navs a:active,
+.topnav-right .navs a:hover{
+    letter-spacing: .1rem;
+    background: var(--txt-color);
+    color: var(--bg-color);
+    border-radius: 10px;
+}
+
+.topnav-right.close span:nth-child(1){
+    
+    top: 10%;
+    transform: translateY(0) rotate(0deg);
+   
+}
+.topnav-right.close span:nth-child(2){
+    
+
+    top: 45%;
+    display: inline;
+    transform: translateY(0) rotate(0deg);
+   
+
+}
+.topnav-right.close span:nth-child(3){
+    
+    top: 80%;
+    transform: translateY(0) rotate(0deg);
+
+}
+.topnav .restau img{
+    width: 15%;
+    border-radius: 30px;
+}
+.restau{
+    font-weight: bolder;
+    font-size: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    padding-top:10px ;
+    padding-left: 10px;
+}
+
+
+/*  SIGNIN CSS     */
+.sec-logo{
+    display: none;
+}
+#signupfirst{
+    width: 100%;
+   
+}
+.signup{
+    box-shadow: 10px 10px 15px;
+    width: 95%;
+    margin: 150px auto;
+    background: var(--txt-color);
+    color: var(--bg-color);
+}
+.signup .signin{
+    font-size: 23px;
+    line-height: 1.4rem;
+}
+.signup .signin a{
+    font-size: 30px;
+    color: orangered;
+    display: flex;
+    justify-content: center;
+    padding-bottom: -130px;
+}
+.signup > *{
+    padding: 10% ;
+} 
+.signup .img{
+    padding: 0 14px;
+}
+.signup .img img{
+    background-blend-mode: multiply;
+    height:350px;
+    width: 100%;
+    border-radius: 10px;
+}
+.signup .img h2{
+    padding-top: 30px;
+    font-size: 32px;
+    display: flex;
+    justify-content: center;
+}
+label{
+    font-weight: bold;
+
+}
+input{
+    padding: 10px;
+    background: var(--bg-color);
+    color: var(--txt-color);
+    font-size: 20px;
+    border-radius: 10px;
+
+}
+.signup i a{
+    color: orangered;
+}
+.submit{
+    padding: 10px 45px;
+    font-size: 25px ;
+    transition:  all 800ms ease-in-out;
+}
+.submit:hover{
+    letter-spacing: .2rem;
+}
+
+
+/*MEDIA QUERRIES*/
+@media screen and (min-width:700px) {
+    .sec-logo{
+        font-size: 25px;
+        top:0;
+        margin: 0;
+        position: fixed;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding:35px;
+        background: var(--bg-color);
+        color: var(--txt-color);
+    }
+    #home{
+        width: 100%;
+        height: 100%;
+
+    }
+    .topnav{
+        position: fixed;
+        top: 0;
+        left: -280px;/*this would make the page load up without the menulist*/
+        width:35%;
+        height: 100%;
+        transition:  all 200ms ease-in-out;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+    .topnav-right .navs{
+       height: 50%;
+       padding: 70%;
+    }
+    .topnav .restau{
+        display: flex;
+        flex-direction: column;
+        margin-top: 90px;
+        align-items: center;
+    }
+    .topnav .restau .logo{
+        position: absolute;
+        bottom: 40px;
+        font-size: larger;
+    }
+    .topnav-right .toggle-btn{
+        position: absolute;
+        top: 6px;
+        left: 105%;
+    }
+    .topnav.lock{
+        left: 0px;
+        transition:  all 200ms ease-in-out;
+    }
+    .topnav-right.close .navs a:hover,
+    .topnav-right.close .navs a:active{
+        letter-spacing: .1rem;
+        background: var(--txt-color);
+        color: var(--bg-color);
+        border-radius: 10px;
+    }
+    .signin p{
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    .signup{
+        box-shadow: 10px 10px 15px;
+        width: 95%;
+        margin: 5px auto;
+        background: var(--txt-color);
+        color: var(--bg-color);
+    }
+    .signup .img {
+        padding: 0 245px;
+        height: 500px;
+    }
+    .signup .img img{
+        height: 450px;
+    }
+}

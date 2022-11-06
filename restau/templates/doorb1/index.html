@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food delivery</title>
+    <link rel="stylesheet" href="{% static 'restau/css/bes.css' %}">
+</head>
+<body>
+    <section id="home">
+        <div class="back" style="background-image: url('{% static 'restau/images/back1.jpg' %}');">
+            <div class="topnav lock">
+                <div class="topnav-right close ">
+                    <div class="toggle-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="user">
+                        <h2>Hi, {{ request.user }}<br><a href="{% url 'logout' %} " style="color:hotpink">Logout</a></h2>
+                        <img src="{% static 'restau/images/profile.jpg' %}" alt="profile">
+                    </div>
+                    <nav class="navs ">
+                        <a href="{% url 'index' %}">HOME</a>
+                        <a href="#menu">MENU</a>
+                        <a href="{% url 'login' %}">SIGN IN</a>
+                        <a href="#contact">CONTACT</a>
+                    </nav>
+                </div>
+                <div class="restau">
+                    <span class="name">237 KITCHEN &nbsp;<img src="{% static 'restau/images/237kitc.jpg' %}"></span>
+                    <span class="logo">&copy; &nbsp; B WORKS</span>
+                </div>
+            </div>
+            <div class="boxes">
+                {% for meal in meals %}
+                <div class="fast-food">
+                    <div class="fastfd-img">
+                        <img src="{% static 'restau/images/ban4.jpg' %}">
+                    </div>
+                    <div class="name">
+                        <div class="fastfd">{{ meal.name }}</div>
+                        <span class="more"><a href="#">XAF {{ meal.price }}</a></span>
+                    </div>
+                </div>
+                {% endfor %}
+<!--                <div class="breakfast">-->
+<!--                    <div class="brkfst-img">-->
+<!--                        <img src="{% static 'restau/images/ban2.jpg' %}">-->
+<!--                    </div>-->
+<!--                    <div class="name">-->
+<!--                        <div class="brkfst">Breakfasts</div>-->
+<!--                        <span class="more"><a href="#">More &gt;</a></span>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="delicious">-->
+<!--                    <div class="dlcs-img">-->
+<!--                        <img src="{% static 'restau/images/recipe.jpg' %}">-->
+<!--                    </div>-->
+<!--                    <div class="name">-->
+<!--                        <div class="dlcs">Delicious</div>-->
+<!--                        <span class="more"><a href="#">More &gt;</a></span>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+            </div>
+        </div>
+        <div class="welcome">
+            <div class="message">
+                <p>
+                    <span>Welcome to 237 Kitchen</span><br>Healthy Fresh Meals!
+                </p>
+                <p>
+                    Open Everyday <span>-7AM to 10PM</span>
+                </p>
+            </div>
+            <div class="learnmore">
+                <button>Learn More</button>
+            </div>
+        </div>
+        <div class="thirdslide">
+            <div class="intropics">
+                 <img src="{% static 'restau/images/chicken1.jpg' %}" class="chicken1">
+                 <img src="{% static 'restau/images/corn.jpg' %}" class="corn">
+            </div>
+        </div>
+        <div class="tasty-parag-loc">
+            <div class="tasty">
+                <p>The Tasty, Cripsy And Delicious Food</p>
+            </div>
+            <div class="parag">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt autem animi, necessitatibus vitae cupiditate aspernatur sapiente dolore est ipsum ad eum quas cum optio exercitationem?</p>
+            </div>
+            <div class="location">
+                <p><span>P.O box 337 </span></p>
+                <p><span>Total Molyko, Buea</span></p>
+            </div>
+        </div>
+        <div class="dishes">
+            <h3>Our Dishes</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis doloribus dolore non delectus su</p>
+            <div class="dishes-cost">
+                <span>Tomato chicken &nbsp; &nbsp; <b>FCFA4500</b></span>
+                <span>Sharwama &nbsp; &nbsp;<b>FCFA2500</b></span>
+                <span>Fufu And Eru &nbsp; &nbsp;<b>FCFA1500</b></span>
+            </div>
+            <button>View More</button>
+        </div>
+    </section>
+    <script src="{% static 'restau/js/bes.js' %}"></script>
+</body>
+</html>
