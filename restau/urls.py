@@ -8,6 +8,11 @@ urlpatterns = [
     path('register', views.registerPage, name='register'),
     path('login/', views.loginPage, name='login'),
     path('logout/', views.logoutPage, name='logout'),
+  ]
+
+# Password Reset
+
+urlpatterns += [
     path('reset_password/',
          auth_views.PasswordResetView.as_view(template_name="doorb1/password_reset.html"),
          name="reset_password"),

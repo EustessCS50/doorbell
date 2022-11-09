@@ -14,13 +14,9 @@ from django.contrib import messages
 def index(request):
 	return render(request, 'index.html')
 
-
 def registerPage(request):
-	# check if the user is already loged ..if yes redirest to homepage
 	if request.user.is_authenticated:
 		return redirect('index')
-	# form = RegisterForm(request.POST)
-	# if no then login the user in
 	else:
 		form = RegisterForm()
 		if request.method == "POST":
@@ -28,19 +24,18 @@ def registerPage(request):
 			if form.is_valid():
 				form.save()
 				user = form.cleaned_data.get('username')
-				email = form.cleaned_data.get('email')
+				emailAddr = form.cleaned_data.get('email')
 				messages.success(request, 'Account successfully created for ' + user)
 
 				if form.save():
 					template = render_to_string('doorb1/email_template.html', {'name': user})
 
 					email = EmailMessage(
-						'Just-In-Time Account',
+						'Kitchen237 Account',
 						template,
 						settings.EMAIL_HOST_USER,
-						[email],
+						[emailAddr],
 					)
-
 					email.fail_silently = False
 					email.send()
 
@@ -48,6 +43,41 @@ def registerPage(request):
 
 		context = {'form': form}
 		return render(request, 'register.html', context)
+
+
+# def registerPage(request):
+# 	# check if the user is already loged ..if yes redirest to homepage
+# 	if request.user.is_authenticated:
+# 		return redirect('index')
+# 	# form = RegisterForm(request.POST)
+# 	# if no then login the user in
+# 	else:
+# 		form = RegisterForm()
+# 		if request.method == "POST":
+# 			form = RegisterForm(request.POST)
+# 			if form.is_valid():
+# 				form.save()
+# 				user = form.cleaned_data.get('username')
+# 				email = form.cleaned_data.get('email')
+# 				messages.success(request, 'Account successfully created for ' + user)
+#
+# 				if form.save():
+# 					template = render_to_string('doorb1/email_template.html', {'name': user})
+#
+# 					email = EmailMessage(
+# 						'Just-In-Time Account',
+# 						template,
+# 						settings.EMAIL_HOST_USER,
+# 						[email],
+# 					)
+#
+# 					email.fail_silently = False
+# 					email.send()
+#
+# 					return redirect('login')
+#
+# 		context = {'form': form}
+# 		return render(request, 'register.html', context)
 
 
 def loginPage(request):
