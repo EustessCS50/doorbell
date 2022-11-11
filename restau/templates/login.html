@@ -45,7 +45,12 @@
                     <h2>Signin</h2>
                 </div>
                 <form action="" method="POST">
-                	{% csrf_token %} 
+                	{% csrf_token %}
+                    {{ form.errors }}
+                    {% for message in messages %}
+                        <p>{{ message }}</p>
+                    {% endfor %}
+                    <br>
                     {{ form.username.label }} 
                     <Br>
                     {{ form.username }} 
@@ -67,8 +72,7 @@
                     <div>
                         <input class="submit" type="submit" value="Login">
                     </div>
-                    {{ form.errors }}
-                </form>   
+                </form>
             </div>
     </Section>
     <script src="{% static 'restau/js/bes.js' %}"></script>

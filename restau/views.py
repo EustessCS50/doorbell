@@ -1,4 +1,5 @@
 from django.conf import settings
+from django.contrib.auth.models import User
 from django.core.mail import EmailMessage
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
@@ -23,10 +24,16 @@ def registerPage(request):
 		if request.method == "POST":
 			form = RegisterForm(request.POST)
 			if form.is_valid():
-				form.save()
 				user = form.cleaned_data.get('username')
 				emailAddr = form.cleaned_data.get('email')
-				messages.success(request, 'Account successfully created for ' + user)
+				if user == User.username:
+					messages.info(request, "There's Already an account with that name!")
+					# return redirect('register')
+				elif emailAddr == User.email:
+					messages.info(request, "There's already an account with this email!")
+					# return redirect('register')
+				form.save()
+				messages.success(request, f'Account successfully created for {user}!')
 
 				if form.save():
 					template = render_to_string('doorb1/email_template.html', {'name': user})
@@ -93,7 +100,6 @@ def loginPage(request):
 			login(request, user)
 			return redirect('index')
 		else:
-			messages.info(request, 'Username or password incorrect! ')
 			return redirect('login')
 
 	context = {'form': form}

@@ -43,6 +43,11 @@
                 </div>
                 <form action="" method="POST">
                 {% csrf_token %}
+                    {{ form.errors }}
+                    {% for message in messages %}
+                        <p>{{ message }}</p>
+                    {% endfor %}
+                    <br>
                     {{ form.username.label }}
                     <Br>
                     {{ form.username }}
@@ -66,7 +71,6 @@
                     <div>
                         <input class="submit" type="submit" value="Register">
                     </div>
-                    {{ form.errors }}
                 </form>   
             </div>
     </Section>
