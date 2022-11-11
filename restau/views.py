@@ -26,12 +26,12 @@ def registerPage(request):
 			if form.is_valid():
 				user = form.cleaned_data.get('username')
 				emailAddr = form.cleaned_data.get('email')
-				if user == User.username:
+				if emailAddr == User.email:
 					messages.info(request, "There's Already an account with that name!")
-					# return redirect('register')
-				elif emailAddr == User.email:
+					return redirect('register')
+				if user == User.username:
 					messages.info(request, "There's already an account with this email!")
-					# return redirect('register')
+					return redirect('register')
 				form.save()
 				messages.success(request, f'Account successfully created for {user}!')
 
