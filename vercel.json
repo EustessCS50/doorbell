@@ -1,5 +1,5 @@
 {
-  ""builds:[{
+  "builds":[{
     "src":"jit/wsgi.py",
     "use": "@vercel/python",
     "config": {"maxLamdaSize": "15mb", "runtime": "python3.9"}
