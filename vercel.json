@@ -1,0 +1,13 @@
+{
+  ""builds:[{
+    "src":"jit/wsgi.py",
+    "use": "@vercel/python",
+    "config": {"maxLamdaSize": "15nb", "runtime": "python3.9"}
+  }],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "jit/wsgi.py"
+    }
+  ]
+}
